@@ -1,0 +1,3 @@
+-r requirements.in
+pip-tools # pip-tools is a tool for managing pip requirements files
+tox # tox is a tool for running Python test suites
