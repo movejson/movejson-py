@@ -50,7 +50,7 @@ class BusinessRuleEngine(object):
         self.__system_available_json_repr_bases = []
 
     @staticmethod
-    def getInstance():
+    def get_instance():
         """
         Business rule engine is globally available in application context. You can register actions, mutations and checkers.
 
@@ -65,6 +65,7 @@ class BusinessRuleEngine(object):
     def filter(self, pretty_name, description, key=None, manipulation_types=[], params=[], _builtin=False):
         """
         Adds filter to BusinessRuleEngine. Filters are ways to manipulate data on the fly.
+
         :param pretty_name: Pretty name of your filter.
         :param description: Description of your filter.
         :param key: Optional key for your filter. You can override builtin filters by overriding its key.
@@ -203,9 +204,6 @@ class BusinessRuleEngine(object):
             except:
                 raise BusinessRuleEngineApiError("Parameter meta_options must be json parsable.")
             p_value_classes = [str(x) for x in p_value_classes]
-            # for value_type in p_value_types:
-            #    if value_type not in self.__system_available_json_reprs:
-            #        raise BusinessRuleEngineApiError(f"{value_type} is not a known value type.")
 
             params_current.append({
                 "pretty_name": str(p_pretty_name),

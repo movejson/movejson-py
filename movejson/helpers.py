@@ -2,10 +2,6 @@ from collections.abc import Iterable
 
 
 class Helper:
-    @staticmethod
-    def prefix_filter(iterable: Iterable, prefix: str):
-        for row in iterable:
-            yield {k: row[k] for k in row if k.startswith(str(prefix))}
 
     @staticmethod
     def exclude_keys(dict_obj: dict, keys: list):
